@@ -1,0 +1,33 @@
+{
+  "name": "wsi-fed-coding-challenge",
+  "version": "1.0.0",
+  "description": "This is an Williams-Sonoma, Inc. Front-End Coding Challenge.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eazhung/WSI-FED-Coding-Challenge.git"
+  },
+  "keywords": [
+    "vanilla",
+    "js"
+  ],
+  "proxy": "https://www.westelm.com/",
+  "author": "Eaz Hung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eazhung/WSI-FED-Coding-Challenge/issues"
+  },
+  "homepage": "https://github.com/eazhung/WSI-FED-Coding-Challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.19.1",
+    "milligram": "^1.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0"
+  }
+}
