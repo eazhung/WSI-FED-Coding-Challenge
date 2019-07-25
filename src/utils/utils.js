@@ -1,7 +1,7 @@
 /**
  * this is for util functions.
  */
-import Product from '../products/product/product.model.js';
+import Product from '../products/product/product.component.js';
 
 /**
  * 

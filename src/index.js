@@ -9,7 +9,7 @@
 
 import productServices from './service/productList.service.js';
 import { mapProduct } from './utils/utils.js';
-import ProductList from './products/product-list.model.js';
+import ProductList from './products/product-list.component.js';
 
 class Main {
   constructor(resolve, reject, ps) {
@@ -19,10 +19,8 @@ class Main {
 
     productServices
       .then(products => {
-        this.productList = new ProductList(mapProduct(products))
-        console.log( this.productList.render())
-        document.querySelector('[data-id="body"]').innerHTML = this.productList.render()
-
+        this.productList = new ProductList(mapProduct(products));
+        // document.querySelector('[data-id="body"]').innerHTML = this.productList.render()
         this.resolve(this);
       })
       .catch(err => {
@@ -32,19 +30,27 @@ class Main {
   }
 
   render() {
-    this.productList.render();
+    return this.productList.render();
   }
 }
 
-window.onload = function() {
+window.onload = async function() {
   const body = document.querySelector('[data-id="body"]');
+  const modal = document.getElementById('modal');
+  modal.onclick = () => {
+    modal.classList.remove('active')
+    modal.innerHTML = "";
+  }
 
-  new Promise((resolve, reject) => {
+  await new Promise((resolve, reject) => {
     new Main(resolve, reject, productServices);
   })
     .then(res => {
-      // console.log(res)
-      // body.innerHTML = res.render()
+      // console.log(res.render());
+      body.innerHTML = '';
+      for(let node of res.render())
+        body.appendChild(node);
+      return body
     })
     .catch(err => err);
 };
