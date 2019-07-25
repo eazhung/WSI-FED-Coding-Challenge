@@ -4,9 +4,8 @@ import Slide from './slide/slide.component.js';
 export default class slider extends component {
   constructor(images, curr = 0) {
     super();
-    // state to store current and prev slide
+    this.images = images
     this.state = {
-      images,
       slides: null,
       dots: null,
       current: curr,
@@ -14,26 +13,28 @@ export default class slider extends component {
     };
   }
 
-  reRender() {
+  slideChange() {
     const currState = this.state;
-    currState.slides[this.state.current].classList.add('active');
-    currState.dots[this.state.current].classList.add('active');
-    currState.slides[this.state.previous].classList.remove('active');
-    currState.dots[this.state.previous].classList.remove('active');
+    currState.slides[currState.current].classList.add('active');
+    currState.dots[currState.current].classList.add('active');
+    // if prev === curr, means it's first time to be here. no need to remove.
+    if (currState.current === currState.previous) return;
+    currState.slides[currState.previous].classList.remove('active');
+    currState.dots[currState.previous].classList.remove('active');
   }
 
   next() {
     const currState = this.state;
-    if (currState.images.length <= 1) return; // if there is no image or one image
+    if (this.images.length <= 1) return; // if there is no image or one image
     this.setState({
       previous: currState.current,
       current:
-        currState.current >= currState.images.length - 1
+        currState.current >= this.images.length - 1
           ? 0
           : currState.current + 1
     });
 
-    this.reRender();
+    this.slideChange();
   }
 
   runSlider(index) {
@@ -43,7 +44,7 @@ export default class slider extends component {
       previous: currState.current,
       current: index
     });
-    this.reRender();
+    this.slideChange();
   }
 
   render() {
@@ -56,7 +57,7 @@ export default class slider extends component {
     dots.classList.add('list-inline');
     dots.classList.add('dots');
 
-    this.state.images.forEach((img, index) => {
+    this.images.forEach((img, index) => {
       //dot elm
       const dotLi = document.createElement('li');
       dotLi.classList.add('list-inline-item');
@@ -70,7 +71,7 @@ export default class slider extends component {
       dots.append(dotLi);
 
       // slide elm
-      const slide = new Slide(img).render();
+      const slide = new Slide(img);
       //stop Propagation to the modal, click slide to next one
       slide.onclick = e => {
         this.next();
@@ -83,9 +84,7 @@ export default class slider extends component {
       slides: slider.childNodes,
       dots: dots.childNodes
     });
-
-    slider.childNodes[this.state.current].classList.add('active');
-    dots.childNodes[this.state.current].classList.add('active');
+    this.slideChange();
     slider.appendChild(dots);
     return slider;
     // slider.append(`<ul id="dots" class="list-inline dots"></ul>
