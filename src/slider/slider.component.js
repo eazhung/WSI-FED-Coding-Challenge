@@ -87,6 +87,5 @@ export default class slider extends component {
     this.slideChange();
     slider.appendChild(dots);
     return slider;
-    // slider.append(`<ul id="dots" class="list-inline dots"></ul>
   }
 }
