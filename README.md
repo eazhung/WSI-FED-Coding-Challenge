@@ -1,24 +1,24 @@
 # WSI-FED-Coding-Challenge
 This is an Williams-Sonoma, Inc. Front-End Coding Challenge.
 
-##Prerequisite
+## Prerequisite
 *Node.js
 *NPM
 
-##Get start
+## Get start
 
 ```
 npm install
 npm run start
 ```
 
-###About this work
+### About this work
 
 Vanilla.js & CSS & HTML
 Try to combine the methodology behind React and Angular.
 You can see state and service and so on.
 
-###CORS Problem
+### CORS Problem
 
 Deal to CORS Problem, Static Json provided,
 But the problem can be solved by Server Proxy or Jsonp.
