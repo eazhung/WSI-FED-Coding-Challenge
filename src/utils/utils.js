@@ -36,9 +36,9 @@ export const mapProduct = products => {
  */
 export const chunk = (array, size) => {
   if (!array) return [];
-  const firstChunk = array.slice(0, size); // create the first chunk of the given array
+  const firstChunk = array.slice(0, size);
   if (!firstChunk.length) {
-    return array; // this is the base case to terminal the recursive
+    return array; 
   }
   return [firstChunk].concat(chunk(array.slice(size, array.length), size));
 };
