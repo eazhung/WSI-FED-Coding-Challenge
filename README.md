@@ -6,21 +6,25 @@ This is an Williams-Sonoma, Inc. Front-End Coding Challenge.
 *NPM
 
 ##Get start
+
 ```
 npm install
 npm run start
 ```
 
 ###About this work
+
 Vanilla.js & CSS & HTML
 Try to combine the methodology behind React and Angular.
 You can see state and service and so on.
 
 ###CORS Problem
+
 Deal to CORS Problem, Static Json provided,
 But the problem can be solved by Server Proxy or Jsonp.
 
 ###Testing
+
 This Project Aims to provide a sample of functional programming, oop design and
 Dom manipulation.
 Testing will be done by jest later on.
