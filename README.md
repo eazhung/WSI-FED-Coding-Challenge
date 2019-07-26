@@ -12,6 +12,8 @@ npm install
 npm run start
 ```
 
+open your browser and visit http://localhost:8080/
+
 ### About this work
 
 Vanilla.js & CSS & HTML
@@ -23,7 +25,7 @@ You can see state and service and so on.
 Deal to CORS Problem, Static Json provided,
 But the problem can be solved by Server Proxy or Jsonp.
 
-###Testing
+### Testing
 
 This Project Aims to provide a sample of functional programming, oop design and
 Dom manipulation.
