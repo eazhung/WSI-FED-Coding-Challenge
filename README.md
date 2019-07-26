@@ -2,8 +2,8 @@
 This is an Williams-Sonoma, Inc. Front-End Coding Challenge.
 
 ## Prerequisite
-*Node.js
-*NPM
+* Node.js
+* NPM
 
 ## Get start
 
