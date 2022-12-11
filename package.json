@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/eazhung/WSI-FED-Coding-Challenge#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "milligram": "^1.3.0"
   },
   "devDependencies": {
